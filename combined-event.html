@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+    <style>
+        /* Add some basic styling to the button */
+        
+        #myButton {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Button element with an initial background color -->
+    <button id="myButton">Click me!</button>
+
+    <script>
+        // Function to be called when the button is clicked
+        function changeColor() {
+            // Get the button element by its ID
+            var myButton = document.getElementById('myButton');
+
+            // Change the background color of the button
+            myButton.style.backgroundColor = '#ffcc00';
+        }
+
+        // Function to be called when the mouse is over the button
+        function displayMessage() {
+            // Display a custom message when hovering over the button
+            alert('Welcome! Click me to change my color.');
+        }
+
+        // Get the button element by its ID
+        var myButton = document.getElementById('myButton');
+
+        // Add an onclick event listener to the button, calling the changeColor function
+        myButton.addEventListener('click', changeColor);
+
+        // Add a mouseover event listener to the button, calling the displayMessage function
+        myButton.addEventListener('mouseover', displayMessage);
+    </script>
+
+</body>
+
+</html>

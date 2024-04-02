@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+</head>
+
+<body>
+
+    <!-- An empty unordered list where list items will be dynamically added -->
+    <ul id="dynamicList"></ul>
+
+    <script>
+        // Function to handle click events on list items
+        function handleListClick(event) {
+            // Check if the clicked element is an <li> inside the #dynamicList
+            if (event.target.tagName === 'LI' && event.target.parentElement.id === 'dynamicList') {
+                // Access the content of the clicked list item
+                var clickedItemContent = event.target.textContent;
+
+                // Perform any desired action with the clicked item content
+                alert('You clicked on: ' + clickedItemContent);
+            }
+        }
+
+        // Add a click event listener to the common ancestor (#dynamicList)
+        document.getElementById('dynamicList').addEventListener('click', handleListClick);
+
+        // Function to dynamically add list items to the #dynamicList
+        function addListItem(content) {
+            var dynamicList = document.getElementById('dynamicList');
+            var listItem = document.createElement('li');
+            listItem.textContent = content;
+            dynamicList.appendChild(listItem);
+        }
+
+        // Example of dynamically adding list items
+        addListItem('Item 1');
+        addListItem('Item 2');
+        addListItem('Item 3');
+    </script>
+
+</body>
+
+</html>

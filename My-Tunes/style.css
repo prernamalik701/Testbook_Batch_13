@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    justify-content: space-around;
+    list-style: none;
+    padding: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    margin-left: 20px;
+    width: 90%;
+    padding: 20px 14px;
+    white-space: 12px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+nav a {
+    display: inline-block;
+    width: 100px;
+    top: 0;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: gray;
+}
+
+img {
+    margin-left: 12%;
+    top: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.billion {
+    text-align: center;
+    background-color: gray;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.image {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background-color: #333;
+    z-index: -1;
+}
+
+.image img {
+    height: 30%;
+    width: 70%;
+    border-radius: 40px;
+}
+
+.image h1,
+.image h6,
+.image p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image h6 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.image p {
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image1 {
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background-color: #333;
+    z-index: -1;
+}
+
+.billion {
+    position: relative;
+    display: inline-block;
+}
+
+.billion h3,
+.billion p,
+.billion a {
+    color: white;
+    text-align: center;
+}
+
+.billion img {
+    height: 30%;
+    width: 70%;
+    border-radius: 40px;
+    margin-top: 20px;
+}
+
+.billion h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.billion p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.billion a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.billion p:last-child {
+    margin-top: 20px;
+}
+
+.center {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.center img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.center1 {
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background-color: #333;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.center1 div {
+    position: relative;
+    overflow: hidden;
+}
+
+.center1 img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.center1 h1,
+.center1 p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    overflow: hidden;
+}
+
+.center1 h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.center1 p {
+    font-size: 1.2em;
+}
+
+.center2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #333;
+    padding: 20px;
+}
+
+.center2 img {
+    width: 70%;
+    height: auto;
+    border-radius: 40px;
+    margin-right: 20px;
+}
+
+.center2 div {
+    max-width: 500px;
+}
+
+.center2 h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.center2 p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.center2 hr {
+    border: 1px solid #333;
+    margin: 20px 0;
+}
+
+.center2 p:last-child {
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+footer div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+footer h6 {
+    font-size: 1em;
+}
+
+footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.copyright {
+    margin-top: 10px;
+    clear: both;
+}
