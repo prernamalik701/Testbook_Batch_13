@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Example</title>
+</head>
+
+<body>
+
+    <!-- An image of a cat with an initial source -->
+    <img id="catImage" src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71d3v+ETmPL._AC_UF1000,1000_QL80_.jpg" alt="Cat Image">
+
+    <script>
+        // Function to be called when the mouse is over the image
+        function changeImage() {
+            // Get the image element by its ID
+            var catImage = document.getElementById('catImage');
+
+            // Change the src attribute to the playful image
+            catImage.src = 'playful-cat-image.jpg';
+        }
+
+        // Function to be called when the mouse leaves the image
+        function restoreImage() {
+            // Get the image element by its ID
+            var catImage = document.getElementById('catImage');
+
+            // Change the src attribute back to the original image
+            catImage.src = 'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71d3v+ETmPL._AC_UF1000,1000_QL80_.jpg';
+        }
+
+        // Get the image element by its ID
+        var catImage = document.getElementById('catImage');
+
+        // Add an event listener for mouseover, calling the changeImage function
+        catImage.addEventListener('mouseover', changeImage);
+
+        // Add an event listener for mouseout, calling the restoreImage function
+        catImage.addEventListener('mouseout', restoreImage);
+    </script>
+
+</body>
+
+</html>
