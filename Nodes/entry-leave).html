@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Enter/Leave Example</title>
+    <style>
+        /* Add some basic styling to the main div */
+        
+        #mainDiv {
+            padding: 20px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Complex HTML element with nested divs and paragraphs -->
+    <div id="mainDiv">
+        <h2>The most humid places on Earth are islands near the Equator. Singapore, for instance, is humid year-round. The warm air is continually saturated with water from the Indian Ocean.</h2>
+
+        <div>
+            <p>A weather map is filled with symbols indicating different types of weather systems. Spirals, for instance, are cyclones or hurricanes, and thick lines are fronts. Cyclones have a spiral shape because they are composed of air that swirls in
+                a circular pattern.</p>
+            <p>When a cold air mass takes the place of a warm air mass, the boundary between them is called a cold front. On a weather map, a cold front is shown as a blue band with triangles pointing in the direction the air is moving.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get the main div element by its ID
+        var mainDiv = document.getElementById('mainDiv');
+
+        // Function to be called when the mouse enters the main div
+        function handleMouseEnter() {
+            // Change the background color of the main div
+            mainDiv.style.backgroundColor = '#a0a0a0';
+        }
+
+        // Function to be called when the mouse leaves the main div
+        function handleMouseLeave() {
+            // Revert the background color to its original state
+            mainDiv.style.backgroundColor = '#e0e0e0';
+        }
+
+        // Add a mouseenter event listener to the main div, calling the handleMouseEnter function
+        mainDiv.addEventListener('mouseenter', handleMouseEnter);
+
+        // Add a mouseleave event listener to the main div, calling the handleMouseLeave function
+        mainDiv.addEventListener('mouseleave', handleMouseLeave);
+    </script>
+
+</body>
+
+</html>

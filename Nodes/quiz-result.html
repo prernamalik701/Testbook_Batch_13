@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .div {
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 400px;
+        /* Set your desired max-width */
+        width: 100%;
+    }
+    
+    .div1 {
+        margin-top: 20px;
+    }
+    
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 9px;
+        width: 200px;
+        border-color: rgb(62, 62, 250);
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+</head>
+
+<body>
+    <div class="div">
+        <h2>Quiz Result</h2>
+        <p>Your result is: <span id="score"></span></p>
+        <p>Total time taken: <span id="timeTaken"></span> seconds</p>
+        <p>Total questions: <span id="totalQuestions"></span></p>
+        <p>Correct: <span id="correctAnswers"></span></p>
+        <p>Wrong: <span id="wrongAnswers"></span></p>
+        <p>Percentage: <span id="percentage"></span>%</p>
+        <div class="div1">
+            <button onclick="startAgain()">Start Again</button>
+            <button onclick="goToHome()">Go to Home</button>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve quiz results from localStorage
+        var score = localStorage.getItem('score');
+        var timeTaken = localStorage.getItem('timeTaken');
+        var totalQuestions = localStorage.getItem('totalQuestions');
+        var correctAnswers = localStorage.getItem('correctAnswers');
+        var wrongAnswers = localStorage.getItem('wrongAnswers');
+        var percentage = ((correctAnswers / totalQuestions) * 100).toFixed(2);
+
+        // Display the quiz results on the page
+        document.getElementById('score').innerText = score;
+        document.getElementById('timeTaken').innerText = timeTaken;
+        document.getElementById('totalQuestions').innerText = totalQuestions;
+        document.getElementById('correctAnswers').innerText = correctAnswers;
+        document.getElementById('wrongAnswers').innerText = wrongAnswers;
+        document.getElementById('percentage').innerText = percentage;
+
+        // Add logic for the "Start Again" and "Go to Home" buttons
+        function startAgain() {
+            // Clear localStorage and redirect to index.html
+            localStorage.clear();
+            window.location.href = 'pipes.html';
+        }
+
+        function goToHome() {
+            // Replace this with the actual URL of your home page
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

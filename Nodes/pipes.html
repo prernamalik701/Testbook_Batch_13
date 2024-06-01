@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .div {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Add other styles as needed */
+    
+    .div1,
+    .div2,
+    .div3 {
+        margin-top: 20px;
+    }
+    
+    button {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 9px;
+        width: 200px;
+        border-color: rgb(62, 62, 250);
+    }
+    
+    .div1 {
+        max-width: 500px;
+        /* Adjust the max-width as needed */
+        margin: 0 auto;
+        word-wrap: break-word;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 9px;
+    }
+</style>
+
+<body>
+    <div class="div" id="quizContainer">
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <script>
+        var currentQuestionIndex = 0;
+        var totalMarks = 0;
+        var correctAnswers = 0;
+        var wrongAnswers = 0;
+        var quizStartTime;
+        var quizEndTime;
+
+        var quizData = [{
+                question: "Two pipes A and B can fill a tank in 60 minutes and 80 minutes respectively, whereas the third pipe C can empty the full tank in 120 minutes. If all three pipes are opened together, in how many minutes will the tank be filled?",
+                options: [42, 48, 67, 57],
+                correctAnswer: 57
+            },
+            // Add more questions as needed
+        ];
+
+        function startQuiz() {
+            quizStartTime = new Date().getTime();
+
+            var quizContainer = document.getElementById('quizContainer');
+            quizContainer.innerHTML = "";
+
+            var questionDiv = document.createElement('div');
+            questionDiv.classList.add('div1');
+            questionDiv.innerText = quizData[currentQuestionIndex].question;
+
+            var optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('div2');
+
+            var options = quizData[currentQuestionIndex].options;
+            for (var i = 0; i < options.length; i += 2) {
+                var button1 = createOptionButton(options[i]);
+                var button2 = createOptionButton(options[i + 1]);
+
+                var buttonContainer = document.createElement('div');
+                buttonContainer.appendChild(button1);
+                buttonContainer.appendChild(button2);
+
+                optionsDiv.appendChild(buttonContainer);
+            }
+
+            var backButton = document.createElement('button');
+            backButton.innerText = "Back";
+            backButton.onclick = function() {
+                previousQuestion();
+            };
+
+            var nextButton = document.createElement('button');
+            nextButton.innerText = "Next";
+            nextButton.onclick = function() {
+                nextQuestion();
+            };
+
+
+            quizContainer.appendChild(questionDiv);
+            quizContainer.appendChild(optionsDiv);
+            quizContainer.appendChild(nextButton);
+        }
+
+        function createOptionButton(option) {
+            var button = document.createElement('button');
+            button.innerText = option;
+            button.onclick = function() {
+                checkAnswer(option);
+            };
+            return button;
+        }
+
+        function checkAnswer(selectedAnswer) {
+            var currentQuestion = quizData[currentQuestionIndex];
+            if (selectedAnswer == currentQuestion.correctAnswer) {
+                alert('Correct! You earned 5 marks.');
+                totalMarks += 5;
+                correctAnswers++;
+            } else {
+                alert('Incorrect. You earned 0 marks.');
+                wrongAnswers++;
+            }
+            nextQuestion();
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                startQuiz();
+            } else {
+                quizEndTime = new Date().getTime();
+                var timeTakenInSeconds = Math.floor((quizEndTime - quizStartTime) / 1000);
+
+                // Store results in localStorage
+                localStorage.setItem('score', totalMarks);
+                localStorage.setItem('timeTaken', timeTakenInSeconds);
+                localStorage.setItem('totalQuestions', quizData.length);
+                localStorage.setItem('correctAnswers', correctAnswers);
+                localStorage.setItem('wrongAnswers', wrongAnswers);
+
+                // Redirect to result.html
+                window.location.href = 'quiz-result.html';
+            }
+        }
+
+        function previousQuestion() {
+            currentQuestionIndex--;
+            if (currentQuestionIndex >= 0) {
+                startQuiz();
+            }
+            // You can add logic to handle going back from the first question if needed.
+        }
+    </script>
+</body>
+
+
+</html>

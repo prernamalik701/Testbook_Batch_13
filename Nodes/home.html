@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz App</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .div {
+        text-align: center;
+        padding: 150px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Add other styles as needed */
+    
+    .hello {
+        color: #333;
+    }
+    
+    .continue {
+        color: #555;
+    }
+    
+    .form {
+        margin-top: 20px;
+    }
+    
+    .sec {
+        margin-top: 20px;
+        color: #777;
+    }
+    
+    .select {
+        margin-top: 20px;
+        color: #0c36f1;
+    }
+    
+    .div1,
+    .div2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    
+    .pipes,
+    .probability,
+    .problem,
+    .profit {
+        padding: 20px;
+        font-size: 14px;
+        border-radius: 9px;
+        background-color: rgb(200, 221, 230);
+        box-sizing: border-box;
+        width: 200px;
+    }
+    
+    .button {
+        background-color: rgb(77, 106, 202);
+        padding: 4px 7px;
+        border-radius: 5px;
+        width: 95px;
+    }
+    
+    #username {
+        font-size: 29px;
+        height: 19px;
+        /* Adjust the font size as needed */
+    }
+    
+    .div img {
+        max-width: 100px;
+        /* Set your desired max-width for the image */
+        margin-bottom: 10px;
+        /* Adjust as needed */
+        border-radius: 9px;
+    }
+</style>
+
+<body>
+    <div class="div">
+        <img src="https://play-lh.googleusercontent.com/oZKb4MS_3fA2URqyMW2QvWqm7Bhjikz_L8002o4VLpIfVUmcVXZUa1OI0r5QS_8b3XA=w240-h480-rw" alt="testbook users">
+        <h1 class="hello">Hello Users</h1>
+        <p class="continue">Enter your name to continue quiz</p>
+        <form class="form">
+            <label for="username"></label>
+            <input type="text" id="username" name="enter your name here">
+            <button class="button">enter</button>
+        </form>
+        <p class="sec">you have 10 second to answer each question</p>
+        <hr>
+        <h1 class="select">Select Category</h1>
+        <div class="div1">
+            <button class="pipes" onclick="PipesAndCistern()">Pipes and Cistern</button>
+            <button class="probability">Probability</button>
+        </div>
+        <div class="div2">
+            <button class="problem">Problem on Ages</button>
+            <button class="profit">Profit and Loss</button>
+        </div>
+    </div>
+    <script>
+        function PipesAndCistern() {
+            // Replace 'path/to/your/file.pdf' with the actual path to your file
+            var filePath = 'pipes.html';
+
+            // Open the file in a same window or tab
+            window.location.href = filePath;
+        }
+    </script>
+
+</body>
+
+</html>

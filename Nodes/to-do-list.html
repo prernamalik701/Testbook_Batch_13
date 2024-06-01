@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Add some basic styling for better presentation */
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        
+        #todo-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+
+    <input type="text" id="newTask" placeholder="Enter a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="todo-list"></ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("newTask");
+            var taskText = taskInput.value.trim();
+
+            if (taskText !== "") {
+                var todoList = document.getElementById("todo-list");
+
+                var listItem = document.createElement("li");
+                listItem.innerHTML = taskText;
+
+                var deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "Delete";
+                deleteButton.onclick = function() {
+                    todoList.removeChild(listItem);
+                };
+
+                listItem.appendChild(deleteButton);
+                todoList.appendChild(listItem);
+
+                taskInput.value = ""; // Clear the input field after adding a task
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu Example</title>
+    <style>
+        /* Add some basic styling to the navigation menu items */
+        
+        #navMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #navMenu li {
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation menu with list items -->
+    <ul id="navMenu">
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+        <li id="item3">Item 3</li>
+        <!-- Add more list items as needed -->
+    </ul>
+
+    <script>
+        // Function to be called when the mouse is over a menu item
+        function highlightItem(event) {
+            // Get the target element (the menu item) from the event
+            var menuItem = event.target;
+
+            // Change the background color to highlight the item
+            menuItem.style.backgroundColor = '#f0f0f0';
+        }
+
+        // Function to be called when the mouse leaves a menu item
+        function unhighlightItem(event) {
+            // Get the target element (the menu item) from the event
+            var menuItem = event.target;
+
+            // Revert the background color to its original state
+            menuItem.style.backgroundColor = '';
+        }
+
+        // Get all the menu items using their tag name
+        var menuItems = document.getElementsByTagName('li');
+
+        // Add event listeners for mouseover and mouseout on each menu item
+        for (var i = 0; i < menuItems.length; i++) {
+            menuItems[i].addEventListener('mouseover', highlightItem);
+            menuItems[i].addEventListener('mouseout', unhighlightItem);
+        }
+    </script>
+
+</body>
+
+</html>

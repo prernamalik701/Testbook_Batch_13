@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML AJAX</title>
+</head>
+
+<body>
+    <script>
+        let myRequest = new XMLHttpRequest(); // declare request as stage 1
+        myRequest.open("GET", "https://", true); // stage 2  
+        myRequest.send(); //stage 3
+        myRequest.onreadystatechange = () => {
+            if (myRequest.readyState === 4 && myRequest.status === 200) {
+                console.log(JSON.myRequest.responseText);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
